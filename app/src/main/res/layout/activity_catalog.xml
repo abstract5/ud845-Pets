@@ -18,6 +18,11 @@
     android:layout_height="match_parent"
     tools:context=".CatalogActivity">
 
+    <ListView
+        android:id="@+id/pet_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <!-- Empty view for the list -->
     <RelativeLayout
         android:id="@+id/empty_view"
@@ -55,11 +60,6 @@
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#A2AAB0"/>
     </RelativeLayout>
-
-    <ListView
-        android:id="@+id/pet_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

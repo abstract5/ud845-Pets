@@ -32,8 +32,7 @@ public class PetCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         // TODO: Fill out this method and return the list item view (instead of null)
-        View v = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
-        return v;
+        return LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
     }
 
     /**
@@ -52,7 +51,13 @@ public class PetCursorAdapter extends CursorAdapter {
         TextView petName = (TextView) view.findViewById(R.id.name);
         TextView petBreed = (TextView) view.findViewById(R.id.summary);
 
-        petName.setText(cursor.getColumnIndex(PetEntry.COLUMN_PET_NAME));
-        petBreed.setText(cursor.getColumnIndex(PetEntry.COLUMN_PET_BREED));
+        int nameIndex = cursor.getColumnIndex(PetEntry.COLUMN_PET_NAME);
+        int breedIndex = cursor.getColumnIndex(PetEntry.COLUMN_PET_BREED);
+
+        String name = cursor.getString(nameIndex);
+        String breed = cursor.getString(breedIndex);
+
+        petName.setText(name);
+        petBreed.setText(breed);
     }
 }
